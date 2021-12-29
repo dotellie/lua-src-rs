@@ -99,6 +99,7 @@ impl Build {
                     _ => config.define("LUA_USE_MACOSX", None),
                 };
             }
+            _ if target.contains("apple-ios") => {}
             _ if target.contains("windows") => {
                 // Defined in Lua >= 5.3
                 config.define("LUA_USE_WINDOWS", None);
